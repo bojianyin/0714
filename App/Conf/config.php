@@ -16,9 +16,6 @@ return array(
     'DB_PWD'                => 'root',          // 密码
     'DB_PORT'               => '',        // 端口
     'DB_PREFIX'             => '',    // 数据库表前缀
-    'TMPL_PARSE_STRING' => array(
-		'__WEB_PUBLIC__' => '/0714/Public'
-	),
-	'FONT_URL' => '/0714/Public'
+    'LOAD_EXT_CONFIG' => 'Image'
 );
 ?>

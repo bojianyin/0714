@@ -1,7 +1,7 @@
 <?php
 function getAuthImage($text) {
-	$im_x = 160;
-	$im_y = 40;
+	$im_x =C(CODE_WIDTH);
+	$im_y = C(CODE_HEIGHT);
 	$im = imagecreatetruecolor($im_x,$im_y);
 	$text_c = ImageColorAllocate($im, mt_rand(0,100),mt_rand(0,100),mt_rand(0,100));
 	$tmpC0=mt_rand(100,255);
@@ -10,16 +10,16 @@ function getAuthImage($text) {
 	$buttum_c = ImageColorAllocate($im,$tmpC0,$tmpC1,$tmpC2);
 	imagefill($im, 16, 13, $buttum_c);
 
-	$font = 't1.ttf';
+	$font = C(FONT_URL);
 
 	for ($i=0;$i<strlen($text);$i++)
 	{
 		$tmp =substr($text,$i,1);
 		$array = array(-1,1);
 		$p = array_rand($array);
-		$an = $array[$p]*mt_rand(1,10);//角度
-		$size = 28;
-		imagettftext($im, $size, $an, 15+$i*$size, 35, $text_c, $font, $tmp);
+		$an = $array[$p]*mt_rand(1,20);//角度
+		$size = C(FONT_SIZE);
+		imagettftext($im, $size, $an, 15+$i*$size, ($im_y/2)+10, $text_c, $font, $tmp);
 	}
 
 
@@ -35,7 +35,7 @@ function getAuthImage($text) {
 		}
 	}
 	//加入干扰象素;
-	$count = 160;//干扰像素的数量
+	$count = C(GANRAO);//干扰像素的数量
 	for($i=0; $i<$count; $i++){
 		$randcolor = ImageColorallocate($distortion_im,mt_rand(0,255),mt_rand(0,255),mt_rand(0,255));
 		imagesetpixel($distortion_im, mt_rand()%$im_x , mt_rand()%$im_y , $randcolor);

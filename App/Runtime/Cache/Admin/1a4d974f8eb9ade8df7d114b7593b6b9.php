@@ -28,7 +28,7 @@
 				    </dl>
 				  </li>
 				  <li class="layui-nav-item">
-				    <a href="javascript:;"><img src="__PUBLIC__/user.png" alt="" width="25"/>admin</a>
+				    <a href="javascript:;"><img src="__PUBLIC__/user.png" alt="" width="25"/><?php echo ($_SESSION['user']); ?></a>
 				    <dl class="layui-nav-child"> <!-- 二级菜单 -->
 				      <dd><a href="">修改密码</a></dd>
 				      <dd><a href="<?php echo U(GROUP_NAME.'/Index/logout');?>">退出登录</a></dd>
@@ -50,17 +50,16 @@
 		<ul class="layui-nav layui-nav-tree layui-nav-side" lay-filter="test">
 		 
 		  <li class="layui-nav-item layui-nav-itemed">
-		    <a href="javascript:;">默认展开</a>
+		    <a href="javascript:;">分类管理</a>
 		    <dl class="layui-nav-child">
-		      <dd><a href="javascript:;" data-type="tabAdd" data-id="" data-url="__PUBLIC__/Tpl/add.html">选项1</a></dd>
-		      <dd><a href="javascript:;" data-type="tabAdd" data-id="" data-url="__PUBLIC__/Tpl/remove.html">选项2</a></dd>
+		      <dd><a href="javascript:;" data-type="tabAdd" data-id="" data-url="<?php echo U(GROUP_NAME.'/Category/index');?>">分类列表</a></dd>
+		      <dd><a href="javascript:;" data-type="tabAdd" data-id="" data-url="<?php echo U(GROUP_NAME.'/Category/addCate');?>">添加分类</a></dd>
 		    </dl>
 		  </li>
 		  <li class="layui-nav-item">
-		    <a href="javascript:;">解决方案</a>
+		    <a href="javascript:;">系统设置</a>
 		    <dl class="layui-nav-child">
-		      <dd><a href="javascript:;" data-type="tabAdd" data-id="" data-url="">选项3</a></dd>
-		      <dd><a href="javascript:;" data-type="tabAdd" data-id="" data-url="">选项4</a></dd>
+		      <dd><a href="javascript:;" data-type="tabAdd" data-id="" data-url="<?php echo U(GROUP_NAME.'/Verify/index');?>">验证码配置</a></dd>
 		    </dl>
 		  </li>
 		  <li class="layui-nav-item"><a href="">产品</a></li>

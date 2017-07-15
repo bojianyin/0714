@@ -38,10 +38,14 @@ $(function(){
 		}else if($("#passwd2").val()==""){
 			$("#passwd2").get(0).focus();
 			return false;
-		}else if($("#user").val()==""){
-			$("#user").get(0).focus();
+		}else if($("#passwd2").val()!=$("#passwd").val()){
+			$("#passwd2").get(0).focus();
+			return false;
+		}else if($("#verify").val()==""){
+			$("#verify").get(0).focus();
 			return false;
 		}
 	})
+	
 
 });

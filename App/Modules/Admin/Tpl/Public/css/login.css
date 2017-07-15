@@ -120,8 +120,8 @@ input::-ms-clear {
 	
 }
 .web_login .inputOuter2 {
-	width:200px;
-	margin-top:6px;margin-top:5px\9;
+	width:214px;
+	margin-top:6px;margin-top:5px;
 	float:left;
 	
 }
@@ -237,5 +237,5 @@ a.zcxy {text-decoration: underline;line-height:58px;margin-left:15px;color: #959
 .web_login .uinArea {
 height: 60px;}
 .header .switch{left:70px;}
-#verify{width:50%;float:left}
+#verify{width:43%;float:left}
 #verify~img{float: right;}

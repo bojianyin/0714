@@ -32,7 +32,21 @@
 			if(!IS_POST) halt("页面不存在！");
 			$db=M("login");
 			if(!$db->where(array("username"=>$_POST['user']))->find()){
-				
+				if(strtolower($_POST['verify'])!=$_SESSION['helloweba_gg']){
+					$this->error("验证码错误!");
+				}else{
+					$data=array(
+						"username"=>$_POST['user']
+						,"password"=>$_POST['passwd']
+					);
+					if($result=$db->add($data)){
+						$this->success("注册成功!",U(GROUP_NAME.'/Login/index'));
+					}else{
+						$this->error("注册失败!");
+					}
+				}
+			}else{
+				$this->error("该用户已注册!");
 			}
 		}
 		Public function verify(){

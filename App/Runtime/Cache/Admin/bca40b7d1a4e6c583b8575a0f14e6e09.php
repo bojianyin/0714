@@ -61,8 +61,6 @@
 
 				<div class="web_login">
 					<form name="form2" id="regUser" accept-charset="utf-8" action="<?php echo U(GROUP_NAME.'/Login/regHandler');?>" method="post">
-						<input type="hidden" name="to" value="reg" />
-						<input type="hidden" name="did" value="0" />
 						<ul class="reg_form" id="reg-ul">
 							<div id="userCue" class="cue">快速注册请注意格式</div>
 							<li>
@@ -90,10 +88,10 @@
 							</li>
 							<li>
             	
-			                 <label for="verify" class="input-tips2">验证码：</label>
+			                 	<label for="verify" class="input-tips2">验证码：</label>
 			                    <div class="inputOuter2">
 			                    	<input type="text" id="verify" name="verify"  class="inputstyle2" />
-			                        <img src="" alt="" />
+			                        <img src="<?php echo U('Login/verify');?>" alt="" />
 			                    </div>
 			                   
 			                </li>
@@ -115,5 +113,9 @@
 		</div>
 
 	</body>
-
+	<script>
+		$(".inputOuter2 img").click(function(){
+			$(this).attr("src","<?php echo U('Login/verify');?>"+'/'+Math.random())
+		})
+	</script>
 </html>

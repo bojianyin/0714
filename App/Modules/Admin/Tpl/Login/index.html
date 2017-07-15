@@ -88,10 +88,10 @@
 							</li>
 							<li>
             	
-			                 <label for="verify" class="input-tips2">验证码：</label>
+			                 	<label for="verify" class="input-tips2">验证码：</label>
 			                    <div class="inputOuter2">
 			                    	<input type="text" id="verify" name="verify"  class="inputstyle2" />
-			                        <img src="" alt="" />
+			                        <img src="{:U('Login/verify')}" alt="" />
 			                    </div>
 			                   
 			                </li>
@@ -113,5 +113,9 @@
 		</div>
 
 	</body>
-
+	<script>
+		$(".inputOuter2 img").click(function(){
+			$(this).attr("src","{:U('Login/verify')}"+'/'+Math.random())
+		})
+	</script>
 </html>
